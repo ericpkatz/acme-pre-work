@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <script src='/dist/bundle.js'></script>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+  </head>
+  <body>
+    <div class='container'>
+    <h1>Acme Warm Up</h1>
+    <div class='list-group'>
+      <div class='list-group-item'>
+        <div class='list-group'>
+          <div class='list-group-item'>
+            Name your repo Acme-WarmUp
+          </div>
+          <div class='list-group-item'>
+            Create your repository from scratch
+          </div>
+          <div class='list-group-item'>
+            Push your repo to Github
+          </div>
+        </div>
+      </div>
+      <div class='list-group-item'>
+        <h2>Files</h2>
+        <pre>
+./src/index.js (shown below)
+./src/AcmeDB.js (you are writing this ~40 lines)
+index.html (shown below)
+        </pre>
+      </div>
+      <div class='list-group-item'>
+        <h2>Contents of ./src/index.js</h2>
+        <pre>
+import AcmeDB from './AcmeDB';
+
+const users = [
+  { name: 'Moe' }
+];
+
+const db = new AcmeDB({ users });
+
+console.log(db.users.length); <span class='label label-success'>//should equal 1</span>
+console.log(db.users[0].id); <span class='label label-success'>//should equal 1</span>
+
+db.addUser({ name: 'Larry' });
+
+console.log(db.showUsers()); <span class='label label-success'>//should be 'Moe, Larry'</span>
+console.log(db.findById(2).name); <span class='label label-success'>//should be larry</span>
+
+db.addUser({ name: 'Curly' });
+db.removeUserById(1);
+
+console.log(db.users[0].name); <span class='label label-success'>//should be Larry</span>
+
+db.editUser({ id: 2, name: 'Laary'});
+
+console.log(db.showUsers()); <span class='label label-success'>//should be 'Laary, Curly'</span>
+
+
+
+        </pre>
+      </div>
+      <div class='list-group-item'>
+        <h2>Code in index.html</h2>
+      <pre>
+Code in this file:
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src='/dist/bundle.js'&gt;&lt;/script&gt;
+    &lt;link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Acme Warm Up&lt;/h1&gt;
+  ...
+
+      </pre>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
