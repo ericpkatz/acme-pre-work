@@ -21,7 +21,7 @@ class AcmeDB {
   }
   editUser(_user){
     this.users = this.users.map( user=> {
-      if(_user.id !== user)
+      if(_user.id !== user.id)
         return user;
       return _user;
     });
